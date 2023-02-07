@@ -1,0 +1,161 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
+class $CLASS$ extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     * @return Renderable
+     */
+
+    function __construct()
+    {
+         $this->middleware('permission:$LOWER_NAME$.index', ['only' => ['index']]);
+         $this->middleware('permission:$LOWER_NAME$.create', ['only' => ['create','store']]);
+         $this->middleware('permission:$LOWER_NAME$.edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:$LOWER_NAME$.destroy', ['only' => ['destroy']]);
+         $this->middleware('permission:$LOWER_NAME$.show', ['only' => ['show']]);
+    }
+
+    public function index(Request $request)
+    {
+
+        $data = $STUDLY_NAME$::fetch($request);
+
+        return view('$LOWER_NAME$::index',compact('data'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * @return Renderable
+     */
+    public function create()
+    {
+        $d= new $STUDLY_NAME$();
+        return view('$LOWER_NAME$::form',compact('d'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Renderable
+     */
+    public function store($STUDLY_NAME$StoreUpdateRequest $request)
+    {
+        $values = $request->except(['_token', 'save']);
+
+        $add = $STUDLY_NAME$::create($values);
+        
+        $message = ['key' => '$STUDLY_NAME$', 'value' => '``'];
+        $status = 'error';
+        $response = trans('message.create_failed', $message);
+        if ($add) 
+        {
+            $status = 'success';
+            $response = trans('message.create_success', $message);
+        }   
+        if ($request->only('save'))
+            return redirect()->route('$LOWER_NAME$.create')->with($status, $response);      
+            
+        return redirect('$LOWER_NAME$')->with($status, $response);
+    }
+
+    /**
+     * Show the specified resource.
+     * @param int $id
+     * @return Renderable
+     */
+    public function show($id)
+    {
+        return view('$LOWER_NAME$::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return Renderable
+     */
+    public function edit($STUDLY_NAME$ $$LOWER_NAME$)
+    {
+        $d=$$LOWER_NAME$;
+        return view('$LOWER_NAME$::form',compact('$LOWER_NAME$'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param Request $request
+     * @param int $id
+     * @return Renderable
+     */
+    public function update($STUDLY_NAME$StoreUpdateRequest $request, $STUDLY_NAME$ $$LOWER_NAME$)
+    {
+        $values = $request->except(['_token', '_method']);
+
+        foreach ($values as $key => $value) {
+           $$LOWER_NAME$->$key = $value;
+        }
+
+        $message = ['key' => '$STUDLY_NAME$', 'value' => ''];
+        $status = 'error';
+        $response = trans('message.update_failed', $message);
+
+        if ($$LOWER_NAME$->save()) {
+            $status = 'success';
+            $response = trans('message.update_success', $message);
+        }
+
+        if ($request->ajax()) {
+            return response()->json(['message' => $response, 'status' => $status]);
+        }
+
+        return redirect('$LOWER_NAME$')->with($status, $response);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @param int $id
+     * @return Renderable
+     */
+    public function destroy(Request $request,$STUDLY_NAME$ $$LOWER_NAME$)
+    {
+        $message = ['key' => '$STUDLY_NAME$', 'value' => ''];
+        $status = 'error';
+        $response = trans('message.delete_failed', $message);
+        if ($$LOWER_NAME$->delete()) {    
+            $status = 'success';
+            $response = trans('message.delete_success', $message);
+        }
+
+        if ($request->ajax()) {
+            return response()->json(['message' => $response, 'status' => $status]);
+        }
+
+
+        return redirect('$LOWER_NAME$')->with($status, $response);
+    }
+
+    public function export(Request $request)
+    {
+
+        ini_set('memory_limit', -1);
+        ini_set('max_execution_time', -1);
+        
+        //$filename ='$LOWER_NAME$';
+        //if($request->type == 'xls')
+        //{
+        //    return (new \Modules\$STUDLY_NAME$\Exports\$STUDLY_NAME$Export($request))
+        //    ->download($filename . '.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        //}
+        //else{
+        //    
+        //}
+
+        return redirect('$LOWER_NAME$')->with('success','Data Berhasil Diexport');
+    }
+
+}

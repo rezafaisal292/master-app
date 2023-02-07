@@ -1,0 +1,13 @@
+{
+    "name": "MasterCabang",
+    "alias": "mastercabang",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MasterCabang\\Providers\\MasterCabangServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

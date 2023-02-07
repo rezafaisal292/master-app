@@ -1,0 +1,13 @@
+{
+    "name": "MasterPage",
+    "alias": "masterpage",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MasterPage\\Providers\\MasterPageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

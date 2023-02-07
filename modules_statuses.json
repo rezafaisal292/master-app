@@ -1,0 +1,20 @@
+{
+    "Roles": true,
+    "MasterRoles": true,
+    "MasterUser": true,
+    "DataPorsi25": true,
+    "DataNominatif": true,
+    "Opsi": true,
+    "MasterPage": true,
+    "Profile": true,
+    "Dashboard": true,
+    "MasterCabang": true,
+    "DataIdberkasNik": true,
+    "PemadananPokok25": true,
+    "RekapPokok": true,
+    "TarifPokok": true,
+    "DataPorsi90": true,
+    "PemadananPokok90": true,
+    "RekapPokok90": true,
+    "TarifPokok90": true
+}

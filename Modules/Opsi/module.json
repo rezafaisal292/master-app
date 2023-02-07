@@ -1,0 +1,13 @@
+{
+    "name": "Opsi",
+    "alias": "opsi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Opsi\\Providers\\OpsiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "MasterRoles",
+    "alias": "masterroles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MasterRoles\\Providers\\MasterRolesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
