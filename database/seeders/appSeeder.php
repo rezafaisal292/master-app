@@ -35,23 +35,23 @@ class appSeeder extends Seeder
                 'id' => Uuid::uuid4(), 'nama' => 'Master Cabang', 'url' => 'mastercabang', 'icon' => 'fas fa-fw fa-book', 'parent' => null,
                 'urutan' => 3, 'status' => '1', 'childs' => []
                 ],
-                [
-                'id' => Uuid::uuid4(), 'nama' => 'Master Data', 'url' => '#', 'icon' => 'fas fa-fw fa-book', 'parent' => null,
-                'urutan' => 4, 'status' => '1', 'childs' => 
-                    [
-                        [
-                            'id' => Uuid::uuid4(),
-                            'nama' => 'Child',
-                            'url' => 'child',
-                            'icon' => null,
-                            'urutan' => 1,
-                            'status' => '1',
-                            'created_at' => Carbon::now(),
-                            'updated_at' => Carbon::now(),
-                        ],
+                // [
+                // 'id' => Uuid::uuid4(), 'nama' => 'Master Data', 'url' => '#', 'icon' => 'fas fa-fw fa-book', 'parent' => null,
+                // 'urutan' => 4, 'status' => '1', 'childs' => 
+                //     [
+                //         [
+                //             'id' => Uuid::uuid4(),
+                //             'nama' => 'Child',
+                //             'url' => 'child',
+                //             'icon' => null,
+                //             'urutan' => 1,
+                //             'status' => '1',
+                //             'created_at' => Carbon::now(),
+                //             'updated_at' => Carbon::now(),
+                //         ],
                         
-                    ],
-                ],
+                //     ],
+                // ],
         ];
 
         foreach ($mstPage as $page) {
