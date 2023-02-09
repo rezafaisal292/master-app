@@ -30,10 +30,8 @@ $segment = request()->segment(1);
         <table class="table table-hover text-nowrap">
           <thead>
             <tr>
-
               <th>Aksi</th>
               <th>Nama Role</th>
-
               <th>List Permission</th>
             </tr>
           </thead>

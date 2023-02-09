@@ -17,16 +17,17 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['mast
     </div>
     <div class="card-body">
         <div class="form-group row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-4 col-sm-4 col-md-4">
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    {!! Form::text('name', $role->name, array('placeholder' => 'Name','class' => 'form-control',$readonly)) !!}
+                    <b>Nama Role</b>
+                    {!! Form::text('name', $role->name, array('placeholder' => 'Nama Role','class' => 'form-control',$readonly)) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Permission :</strong>
-                    <br/>
+                    <b>List Permission</b>
+                    
+                    <hr>
                     @foreach($page as $p)
                     <label>
                         {{ $p->nama }}
@@ -37,7 +38,7 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['mast
                             @if($p->url == substr($value->name,'0',strpos($value->name,'.')))
                             <div class="col-md-2">
                             {{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
-
+                            &nbsp;
                                 {{ $value->name }} 
                             </div>
                             @endif

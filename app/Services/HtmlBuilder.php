@@ -33,37 +33,37 @@ class HtmlBuilder extends \Collective\Html\HtmlBuilder
         return __('label.no_action');
     }
 
-    public function linkPemadananPokok25(string $uri, $parameter)
-    {
-            $html ='';
-            if (auth()->user()->can($uri.'.show')) {
-                $html .='<a href="'.route($uri.'.show', $parameter['id']).'" class="btn btn-sm btn-info text-white btn-load"><i class="fas fa-eye"></i></a> &nbsp;';
-                $html .='<a href="'.route($uri.'.edit', $parameter['id']).'" class="btn btn-sm btn-warning text-white btn-load"><i class="fas fa-edit"></i></a> &nbsp;';           
-                // $html .='<a href="'.route($uri.'.generateangsuran', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
-                // $html .='<a href="'.route($uri.'.generateTarif', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
-            }
+    // public function linkPemadananPokok25(string $uri, $parameter)
+    // {
+    //         $html ='';
+    //         if (auth()->user()->can($uri.'.show')) {
+    //             $html .='<a href="'.route($uri.'.show', $parameter['id']).'" class="btn btn-sm btn-info text-white btn-load"><i class="fas fa-eye"></i></a> &nbsp;';
+    //             $html .='<a href="'.route($uri.'.edit', $parameter['id']).'" class="btn btn-sm btn-warning text-white btn-load"><i class="fas fa-edit"></i></a> &nbsp;';           
+    //             // $html .='<a href="'.route($uri.'.generateangsuran', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
+    //             // $html .='<a href="'.route($uri.'.generateTarif', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
+    //         }
 
-            return $this->toHtmlString($html);
+    //         return $this->toHtmlString($html);
         
 
-        return __('label.no_action');
-    }
+    //     return __('label.no_action');
+    // }
 
-    public function linkPemadananPokok90(string $uri, $parameter)
-    {
-            $html ='';
-            if (auth()->user()->can($uri.'.show')) {
-                $html .='<a href="'.route($uri.'.show', $parameter['id']).'" class="btn btn-sm btn-info text-white btn-load"><i class="fas fa-eye"></i></a> &nbsp;';
-                $html .='<a href="'.route($uri.'.edit', $parameter['id']).'" class="btn btn-sm btn-warning text-white btn-load"><i class="fas fa-edit"></i></a> &nbsp;';           
-                // $html .='<a href="'.route($uri.'.generateangsuran', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
-                // $html .='<a href="'.route($uri.'.generateTarif', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
-            }
+    // public function linkPemadananPokok90(string $uri, $parameter)
+    // {
+    //         $html ='';
+    //         if (auth()->user()->can($uri.'.show')) {
+    //             $html .='<a href="'.route($uri.'.show', $parameter['id']).'" class="btn btn-sm btn-info text-white btn-load"><i class="fas fa-eye"></i></a> &nbsp;';
+    //             $html .='<a href="'.route($uri.'.edit', $parameter['id']).'" class="btn btn-sm btn-warning text-white btn-load"><i class="fas fa-edit"></i></a> &nbsp;';           
+    //             // $html .='<a href="'.route($uri.'.generateangsuran', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
+    //             // $html .='<a href="'.route($uri.'.generateTarif', $parameter['id']).'" class="btn btn-sm btn-danger text-white btn-load"><i class="fas fa-retweet"></i></a> &nbsp;';
+    //         }
 
-            return $this->toHtmlString($html);
+    //         return $this->toHtmlString($html);
         
 
-        return __('label.no_action');
-    }
+    //     return __('label.no_action');
+    // }
 
 
 

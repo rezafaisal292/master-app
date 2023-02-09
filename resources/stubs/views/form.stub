@@ -15,7 +15,7 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['$LOW
 {{ Form::open(['route' => $action, 'method' => $method, 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
 <div class="card card-primary">
     <div class="card-header">
-        {{$title}} Data $STUDLY_NAME$
+        <b>{{$title}} Data $STUDLY_NAME$</b>
     </div>
     <div class="card-body">
         <div class="form-group row">
