@@ -9,7 +9,7 @@ $segment = request()->segment(1);
 @section('title', env('APP_NAME').'::MasterUser')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">MasterUser</h1>
+    <h1 class="m-0 text-dark">Master User</h1>
 @stop
 
 @section('content')

@@ -11,7 +11,7 @@
 {{ Form::open(['route' => ['profile.update',  Auth::user()->id], 'method' => 'put', 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
 <div class="card card-primary">
     <div class="card-header">
-        Data Profile
+        <b>Data Profile</b>
     </div>
     <div class="card-body">
         <div class="form-group row">

@@ -20,7 +20,7 @@ $checked = false;
 {{ Form::open(['route' => $action,'method' => $method,'class' => 'form-horizontal form-data','autocomplete' => 'off']) }}
 <div class="card card-primary">
     <div class="card-header">
-        {{ $title }} Data Master Page
+        <b>{{ $title }} Data Master Page</b>
     </div>
     <div class="card-body">
         <div class="row">

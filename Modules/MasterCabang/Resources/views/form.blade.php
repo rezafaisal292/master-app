@@ -8,7 +8,7 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['mast
 @section('content')
 
 @section('content_header')
-<h1 class="m-0 text-dark">MasterCabang</h1>
+<h1 class="m-0 text-dark">Master Cabang</h1>
 
 @stop
 
@@ -16,7 +16,7 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['mast
 {{ Form::open(['route' => $action, 'method' => $method, 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
 <div class="card card-primary">
     <div class="card-header">
-        {{$title}} Data MasterCabang
+        <b>{{$title}} Data Master Cabang</b>
     </div>
     <div class="card-body">
         <div class="form-group row">

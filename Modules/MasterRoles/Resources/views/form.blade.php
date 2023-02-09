@@ -13,7 +13,7 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['mast
 {{ Form::open(['route' => $action, 'method' => $method, 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
 <div class="card card-primary">
     <div class="card-header">
-        {{$title}} Data Master Roles
+        <b>{{$title}} Data Master Roles</b>
     </div>
     <div class="card-body">
         <div class="form-group row">

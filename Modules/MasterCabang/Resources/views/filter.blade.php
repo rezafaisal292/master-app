@@ -5,7 +5,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6" style="text-align:left">
-                        Pencarian
+                        <b>Pencarian</b>
                     </div>
 
                 </div>
@@ -28,7 +28,7 @@
             <div class="card-footer clearfix float-right">
                 <button type="submit" class="btn btn-info btn-sm">
                     <i class="fas fa-search"></i>&nbsp; Cari
-                </button>
+                </button>&nbsp; 
                   @if(request()->segment(2) == 'filter')
                 <a href="{{url($segment)}}" class="btn btn-danger btn-sm">
                     <i class="fas fa-times"></i>&nbsp; Hapus Pencarian
