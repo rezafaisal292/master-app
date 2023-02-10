@@ -1,15 +1,11 @@
 @php
-$segment = request()->segment(1);
-$export=['xls'];
+$segment = request()->segment(1); $export=['xls'];
 @endphp
 @extends('adminlte::page')
-
 @section('title', env('APP_NAME').'::Master Cabang')
-
-  @section('content_header')
-      <h1 class="m-0 text-dark">Master Cabang</h1>
-  @stop
-
+@section('content_header')
+    <h1 class="m-0 text-dark">Master Cabang</h1>
+@stop
 @section('content')
 @include('master-component.alert')
 @include('mastercabang::filter')

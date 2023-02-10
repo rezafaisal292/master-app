@@ -22,7 +22,7 @@
                     {{ Form::fgSelect('Cabang Induk', 'kodeinduk',$listInduk, request()->kodeinduk, ['class' => 'form-control select2'], false) }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::fgSelect('Kanwil', 'kodekanwil',$listKanwil, request()->kodekanwil, ['class' => 'form-control Select2'], false) }}
+                    {{ Form::fgSelect('Kanwil', 'kodekanwil',$listKanwil, request()->kodekanwil, ['class' => 'form-control select2'], false) }}
                 </div>
             </div>
             <div class="card-footer clearfix float-right">

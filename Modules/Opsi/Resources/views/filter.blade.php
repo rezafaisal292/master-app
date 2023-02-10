@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6" style="text-align:left">
-                        Pencarian
+                        <b>Pencarian</b>
                     </div>
 
                 </div>

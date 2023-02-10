@@ -2,16 +2,11 @@
 $segment = request()->segment(1);
 @endphp
 @extends('adminlte::page')
-
-
 @section('title', env('APP_NAME').'::Master Roles')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Master Roles</h1>
 @stop
-
 @section('content')
-
 @include('master-component.alert')
 @include('masterroles::filter')
 <div class="row">

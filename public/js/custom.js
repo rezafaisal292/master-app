@@ -1,4 +1,5 @@
 
+
 // Show loading
 function showLoading() {
     $(".loading-page").fadeIn();
