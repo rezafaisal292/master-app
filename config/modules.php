@@ -37,6 +37,7 @@ return [
             'views/filter' => 'Resources/views/filter.blade.php',
             'views/form' => 'Resources/views/form.blade.php',
             'entities/model' => 'Entities/model.php',
+            'request' => 'Http/Requests/StoreUpdateRequest.php',
             // 'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
             // 'composer' => 'composer.json',
@@ -54,6 +55,7 @@ return [
             'views/filter' => ['LOWER_NAME', 'STUDLY_NAME'],
             'views/form' => ['LOWER_NAME', 'STUDLY_NAME'],
             'entities/model' => ['LOWER_NAME', 'STUDLY_NAME'],
+            'request' => ['LOWER_NAME', 'STUDLY_NAME','CLASS_NAMESPACE'],
             // 'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
             'composer' => [

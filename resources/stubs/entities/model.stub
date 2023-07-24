@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Customer\Entities;
+namespace Modules\$STUDLY_NAME$\Entities;
 
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;

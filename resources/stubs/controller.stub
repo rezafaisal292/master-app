@@ -5,6 +5,9 @@ namespace $CLASS_NAMESPACE$;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\$STUDLY_NAME$\Entities\$STUDLY_NAME$;
+use Modules\$STUDLY_NAME$\Http\Requests\$STUDLY_NAME$StoreUpdateRequest;
+
 
 class $CLASS$ extends Controller
 {
@@ -126,7 +129,11 @@ class $CLASS$ extends Controller
         $message = ['key' => '$STUDLY_NAME$', 'value' => ''];
         $status = 'error';
         $response = trans('message.delete_failed', $message);
-        if ($$LOWER_NAME$->delete()) {    
+        //if ($$LOWER_NAME$->delete()) {    
+        //    $status = 'success';
+        //    $response = trans('message.delete_success', $message);
+        //}
+        if ($$LOWER_NAME->update(['status'=>'2'])) {    
             $status = 'success';
             $response = trans('message.delete_success', $message);
         }
