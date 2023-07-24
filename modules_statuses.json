@@ -16,5 +16,7 @@
     "DataPorsi90": true,
     "PemadananPokok90": true,
     "RekapPokok90": true,
-    "TarifPokok90": true
+    "TarifPokok90": true,
+    "Customer": true,
+    "Kategori": true
 }

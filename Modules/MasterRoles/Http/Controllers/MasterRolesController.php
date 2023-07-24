@@ -5,12 +5,13 @@ namespace Modules\MasterRoles\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Modules\MasterRoles\Entities\MasterRole;
-use Modules\MasterRoles\Entities\MasterPermission;
-use DB;
 use Modules\MasterPage\Entities\MasterPage;
+use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
 
 class MasterRolesController extends Controller
 {
@@ -98,6 +99,56 @@ class MasterRolesController extends Controller
             ->all();
 
         $page = MasterPage::where('url','!=','#')->get();
+        foreach($page as $p)
+        {
+            $cpermission=Permission::where('name','ilike',$p->url.'%')->count();
+            if($cpermission == 0 )
+            {
+                $listroute = [];
+                $used = ['index', 'create', 'show', 'edit', 'destroy','export','import'];
+                foreach (Route::getRoutes()->getRoutes() as $route) {
+                   
+                    $action = $route->getAction();
+                    if (array_key_exists('as', $action)) {
+                        // You can also use explode('@', $action['controller']); here
+                        // to separate the class name from the method
+        
+                        foreach ($used as $u) {
+                            if (preg_match("/" . $u . "/i", $action['as'])) {
+                                $listroute[] = $action['as'];
+                            }
+                        }
+                    }
+                }
+                foreach ($listroute as $lr) {
+                    DB::table('permissions')->insert([
+                        'name' => $lr,
+                        // 'guard_name' =>  ucfirst(substr($lr, strpos($lr, '.') + 1)),
+                        'guard_name' => 'web',
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
+                    ]);
+                }
+            }
+        }
+        // dd($page->pluck('url'));
+        // foreach($permission as $p)
+        // {
+        //     foreach($page as $pa)
+        //     {
+        //         // dd($p);
+        //         if($p->name!=$pa->url.'index') &&($permission)
+        //         {
+        //             // dd($p);
+        //         }
+        //         else{
+        //             // dd($p);
+        //         }
+        //         // , 'create', 'show', 'edit', 'destroy','export','import');
+        //     }
+        //     // if($permission != )
+        // }
+
     
         return view('masterroles::form',compact('role','permission','rolePermissions','page'));
     }

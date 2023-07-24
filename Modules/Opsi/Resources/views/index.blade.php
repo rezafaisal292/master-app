@@ -68,4 +68,5 @@ $segment = request()->segment(1);
     </div>
   </div>
 </div>
+
 @stop

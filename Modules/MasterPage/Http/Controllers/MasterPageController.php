@@ -34,7 +34,9 @@ class MasterPageController extends Controller
     public function create()
     {
         $d = new MasterPage();
-        return view('masterpage::form',compact('d'));
+
+        $parent = to_dropdown(MasterPage::parent(), 'id', 'nama');
+        return view('masterpage::form',compact('d','parent'));
     }
 
     /**
@@ -44,7 +46,22 @@ class MasterPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $values = $request->except(['_token', 'save']);
+
+        $add = MasterPage::create($values);
+        
+        $message = ['key' => 'Master Page', 'value' => '`'.$values['nama'].'`'];
+        $status = 'error';
+        $response = trans('message.create_failed', $message);
+        if ($add) 
+        {
+            $status = 'success';
+            $response = trans('message.create_success', $message);
+        }   
+        if ($request->only('save'))
+            return redirect()->route('masterpage.create')->with($status, $response);      
+            
+        return redirect('masterpage')->with($status, $response);
     }
 
     /**

@@ -18,10 +18,10 @@ $segment = request()->segment(1); $export=['xls'];
              Total Data : {{$data->total()}} 
           </div>
           <div class="col-md-6" style="text-align:right">
-            {{-- {{ Form::open(['route' => $segment.'.export', 'method' => 'post', 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
+            {{ Form::open(['route' => $segment.'.export', 'method' => 'post', 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
             {!! Form::hidden('deal_ref', request()->deal_ref) !!}
             @include('master-component.button-export')
-            {{ Form::close() }} --}}
+            {{ Form::close() }}
           </div>
         </div>
       </div>

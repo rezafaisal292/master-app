@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\DataNominatif\Exports;
+namespace Modules\MasterCabang\Exports;
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -9,9 +9,9 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 use DB;
-use Modules\DataNominatif\Entities\DataNominatif;
+use Modules\MasterCabang\Entities\MasterCabang;
 
-class DataNominatifExport implements FromView, ShouldAutoSize, WithEvents
+class MasterCabangExport implements FromView, ShouldAutoSize, WithEvents
 {
     use Exportable;
 
@@ -34,8 +34,8 @@ class DataNominatifExport implements FromView, ShouldAutoSize, WithEvents
      */
     public function view(): View
     {
-        $data = DataNominatif::fetch($this->_request,true);
-        return view('datanominatif::xls', compact('data'));
+        $data = MasterCabang::fetch($this->_request,true);
+        return view('mastercabang::xls', compact('data'));
     }
 
     /**

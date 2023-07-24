@@ -155,15 +155,15 @@ class MasterCabangController extends Controller
         ini_set('memory_limit', -1);
         ini_set('max_execution_time', -1);
         
-        //$filename ='mastercabang';
-        //if($request->type == 'xls')
-        //{
-        //    return (new \Modules\MasterCabang\Exports\MasterCabangExport($request))
-        //    ->download($filename . '.xlsx', \Maatwebsite\Excel\Excel::XLSX);
-        //}
-        //else{
-        //    
-        //}
+        $filename ='mastercabang';
+        if($request->type == 'xls')
+        {
+           return (new \Modules\MasterCabang\Exports\MasterCabangExport($request))
+           ->download($filename . '.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+        }
+        else{
+           
+        }
 
         return redirect('mastercabang')->with('success','Data Berhasil Diexport');
     }

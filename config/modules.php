@@ -36,10 +36,11 @@ return [
             'views/index' => 'Resources/views/index.blade.php',
             'views/filter' => 'Resources/views/filter.blade.php',
             'views/form' => 'Resources/views/form.blade.php',
+            'entities/model' => 'Entities/model.php',
             // 'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
             // 'composer' => 'composer.json',
-            'assets/js/app' => 'Resources/assets/js/app.js',
+            // 'assets/js/app' => 'Resources/assets/js/app.js',
             // 'assets/sass/app' => 'Resources/assets/sass/app.scss',
             // 'webpack' => 'webpack.mix.js',
             // 'package' => 'package.json',
@@ -52,6 +53,7 @@ return [
             'views/index' => ['LOWER_NAME', 'STUDLY_NAME'],
             'views/filter' => ['LOWER_NAME', 'STUDLY_NAME'],
             'views/form' => ['LOWER_NAME', 'STUDLY_NAME'],
+            'entities/model' => ['LOWER_NAME', 'STUDLY_NAME'],
             // 'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
             'composer' => [
@@ -118,7 +120,7 @@ return [
             'filter' => ['path' => 'Http/Middleware', 'generate' => false],#true
             'request' => ['path' => 'Http/Requests', 'generate' => true],
             'provider' => ['path' => 'Providers', 'generate' => true],
-            'assets' => ['path' => 'Resources/assets', 'generate' => true],
+            'assets' => ['path' => 'Resources/assets', 'generate' => false],#true
             'lang' => ['path' => 'Resources/lang', 'generate' => false], #true
             'views' => ['path' => 'Resources/views', 'generate' => true],
             'test' => ['path' => 'Tests/Unit', 'generate' => false], #true

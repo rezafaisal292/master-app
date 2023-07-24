@@ -20,8 +20,8 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['$LOW
     <div class="card-body">
         <div class="form-group row">
               <div class="col-md-6">
-                {{-- {{ Form::fgText('Nama Cabang', 'namacabang', request()->namacabang == null ? $d->namacabang: request()->namacabang , ['class' => 'form-control'], null, 'text', true) }} --}}
-                {{-- {{ Form::fgSelect('Cabang Induk', 'kodeinduk',$listInduk, request()->kodeinduk == null ? $d->kodeinduk: request()->kodeinduk  , ['class' => 'form-control select2'], null, true) }}  --}}
+                {{-- {{ Form::fgText('Nama', 'nama', request()->nama == null ? $d->nama: request()->nama , ['class' => 'form-control'], null, 'text', true) }} --}}
+                {{-- {{ Form::fgSelect('Status', 'status',$status, request()->status == null ? $d->status: request()->status  , ['class' => 'form-control select2'], null, true) }}  --}}
             </div>
         </div>
     </div>

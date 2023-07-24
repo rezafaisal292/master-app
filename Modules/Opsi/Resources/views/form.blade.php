@@ -17,17 +17,17 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['opsi
     </div>
     <div class="card-body">
         <div class="form-group row">
-            <label for="" class="col-md-3 col-form-label">Opsi</label>
+            <label for="" class="col-md-3 col-form-label">Opsi `{{$d->name}}`</label>
             <div class="col-md-9">
                 @if($d->optionValues->count())
                 @foreach($d->optionValues as $v)
                 <div class="options" id="options{{ $loop->iteration }}">
                     <div class="row" style="margin-bottom:8px">
-                        <div class="col-sm-4">
+                        <div class="col-sm-2">
                             {{ Form::text('keys[]', $v->key, ['class' => 'form-control', 'placeholder' => 'Key Opsi']) }}
-                            <!-- </div> -->
+                        </div> 
 
-                            <!-- <div class="col-sm-4"> -->
+                        <div class="col-sm-3">
                             {{ Form::text('values[]', $v->value, ['class' => 'form-control', 'placeholder' => 'Value Opsi']) }}
                         </div>
 
@@ -73,4 +73,6 @@ if ($segment !== 'create' ) { $title = 'Ubah'; $method = 'put'; $action = ['opsi
     </div>
 </div>
 {{ Form::close() }}
+
+
 @endsection

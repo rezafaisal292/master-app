@@ -1,0 +1,79 @@
+@php
+$segment = request()->segment(1);
+$export=['xls'];
+@endphp
+@extends('adminlte::page')
+
+@section('title', env('APP_NAME').'::Kategori')
+
+@section('content_header')
+    <h1 class="m-0 text-dark">Kategori</h1>
+@stop
+
+@section('content')
+@include('master-component.alert')
+@include('kategori::filter')
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6" style="text-align:left">
+             {{-- Total Data : {{$data->total()}}  --}}
+          </div>
+          <div class="col-md-6" style="text-align:right">
+            {{-- {{ Form::open(['route' => $segment.'.export', 'method' => 'post', 'class' => 'form-horizontal form-data', 'autocomplete' => 'off']) }}
+            {!! Form::hidden('deal_ref', request()->deal_ref) !!}
+            @include('master-component.button-export')
+            {{ Form::close() }} --}}
+          </div>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>Aksi</th>
+              <th>Nama</th>
+              <th>Status</th>
+              <th>Tanggal</th>
+            </tr>
+          </thead>
+          <tbody>
+             {{-- @foreach ($data as $d)
+            <tr>
+              <td>
+              {!! Html::linkResource($segment, ['id' => $d->id, 'label' => '`'.$d->nama.'`']) !!} 
+              </td>
+              <td>{{$d->nama}}</td>
+              <td>{{$status[$d->status]}}</td>
+              <td>{{$d->updated_at}}</td>
+              
+            </tr>
+            @endforeach  --}}
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer clearfix float-right">
+
+        <div class="row">
+          <div class="col-4">
+            {{-- {{ $data->links("pagination::bootstrap-4") }} --}}
+          </div>
+          <div class="col-8 text-right">
+           
+              @include('master-component.button-add')
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section('js')
+   
+<script src="{{ asset('js/custom.js', request()->isSecure()) }}"></script>
+@stop
+@stop

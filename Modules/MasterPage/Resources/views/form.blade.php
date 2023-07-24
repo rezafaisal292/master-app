@@ -28,8 +28,10 @@ $checked = false;
                 {{ Form::fgText('Nama', 'nama', $d->nama, ['class' => 'form-control'], null, 'text', true) }}
                 {{ Form::fgText('URL', 'url', $d->url, ['class' => 'form-control'], null, 'text', true) }}
                 {{ Form::fgText('Icon', 'icon', $d->icon, ['class' => 'form-control'], null, 'text', true) }}
-                {{ Form::fgText('Parent', 'parent', $d->parent, ['class' => 'form-control'], null, 'text', true) }}
+                {{-- {{ Form::fgText('Parent', 'parent', $d->parent, ['class' => 'form-control'], null, 'text', true) }} --}}
+                {{ Form::fgSelect('Parent', 'parent',to_dropdown($parent), $d->parent, ['class' => 'form-control '], null,true) }}
                 {{ Form::fgText('Urutan', 'urutan', $d->urutan, ['class' => 'form-control'], null, 'text', true) }}
+                {{ Form::fgSelect('Status', 'status',to_dropdown($status), $d->status, ['class' => 'form-control '], null,true) }}
             </div>
         </div>
     </div>

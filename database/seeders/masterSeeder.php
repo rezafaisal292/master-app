@@ -72,7 +72,7 @@ class masterSeeder extends Seeder
         ],);
        
         $listroute = [];
-        $used = ['index', 'create', 'show', 'edit', 'destroy','export','import','generateangsuran'];
+        $used = ['index', 'create', 'show', 'edit', 'destroy','export','import'];
         foreach (Route::getRoutes()->getRoutes() as $route) {
             $action = $route->getAction();
             if (array_key_exists('as', $action)) {

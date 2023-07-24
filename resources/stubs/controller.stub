@@ -83,7 +83,7 @@ class $CLASS$ extends Controller
     public function edit($STUDLY_NAME$ $$LOWER_NAME$)
     {
         $d=$$LOWER_NAME$;
-        return view('$LOWER_NAME$::form',compact('$LOWER_NAME$'));
+        return view('$LOWER_NAME$::form',compact('d'));
     }
 
     /**

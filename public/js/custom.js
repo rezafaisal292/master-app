@@ -116,4 +116,6 @@ $('.monthYear').daterangepicker({
   }
 });
 
+
 });
+
